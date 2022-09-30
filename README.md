@@ -5,7 +5,7 @@ A game incorporating facts about code fellows members inspired by pokemon battle
 
 ## Important Links
 - [Game Repo](https://github.com/Code-201-Final-GroupE/code-rivals)
-
+- [Deployed Readme](https://code-201-final-groupe.github.io/code-rivals/)
 ## Team Members
 
 - Casey Glidewell
