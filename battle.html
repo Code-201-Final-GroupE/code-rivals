@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,53 +8,79 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/battle.css">
   <script src="js/battle.js"></script>
-  <title>Document</title>  
+  <title>Document</title>
   <link rel=“preconnect” href=“https://fonts.googleapis.com”>
   <link rel=“preconnect” href=“https://fonts.gstatic.com” crossorigin>
   <link href=“https://fonts.googleapis.com/css2?family=Silkscreen&display=swap” rel=“stylesheet”>
 
 </head>
 
-  <body>
-    <nav>
-      <!-- IMAGE TAG FOR LOGO <i></i> -->
-      <h1> Welcome To Code Rivals </h1>
+<body>
+  <nav>
+    <!-- IMAGE TAG FOR LOGO <i></i> -->
+    <h1> Welcome To Code Rivals </h1>
 
-      <button id="about-button">
-        About Us
-      </button>
+    <button id="about-button">
+      About Us
+    </button>
 
-      <button id="landing-button">
-        Main Page
-      </button>
+    <button id="landing-button">
+      Main Page
+    </button>
 
-    </nav>
-    <div>
+  </nav>
+
+  <main>
+
+    <section id="game-display">
+
+      <div class="display-container" id="player-display-container">
+        <div id="player-info">
+          <h3 class="name" id="player-name"></h3>
+          <div class="hp">
+            <p>Health Bar</p>
+            <div id="hp-background">
+              <p id="player-hp-bar"></p>
+            </div>
+          </div>
+        </div>
+        <img id='player-sprite' src="" alt="">
+      </div>
+
+      <div class="display-container" id="npc-display-container">
+        <div id="npc-info">
+          <h3 class="name" id="npc-name"></h3>
+          <div class="hp">
+            <p>Health Bar</p>
+            <div id="hp-background">
+              <p id="npc-hp-bar"></p>
+            </div>
+          </div>
+        </div>
+        <img id='npc-sprite' src="" alt="">
+      </div>
+
+    </section>
+
+    <section id="game-menu">
       <div id="player-message-container">
         <p id="player-message">
         </p>
       </div>
+      
       <div id="button-container">
         <button id="action-one"></button>
         <button id="action-two"></button>
         <button id="action-three"></button>
         <button id="action-four"></button>
       </div>
+    </section>
 
+  </main>
 
-
-
-
-    </div>
-
-    
-
-
-
-  
-
-
-
+  <footer>
+  </footer>
 
 </body>
+
 </html>
