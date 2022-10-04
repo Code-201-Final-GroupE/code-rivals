@@ -10,7 +10,7 @@ const form = document.getElementById('player-form');
 let npc_data_array = [
   ['Alan Turing', 'Math', 'Air', 'We can only see a short distance ahead, but we can see plenty there that needs to be done…in kicking your butt.', 'Sometimes it is the people who no one imagines anything of who do the things that no one can imagine…but in your case, they were right.'],
   ['Ada Lovelace', 'Math', 'Fire', 'That brain of mine is something more than merely mortal; as this battle will show.', 'Imagination is the Discovering Faculty, pre-eminently. It is that which penetrates into the unseen worlds around us…but it took no imagination to defeat you.'],
-  ['Admiral Grace Hopper', 'COBOL', 'Earth', 'A ship in port is safe, but that/’s not what ships are built for…this ship gonna take you to school.', 'One accurate measurement is worth a thousand expert opinions…you have been measured and found wanting.'],
+  ['Admiral Grace Hopper', 'COBOL', 'Earth', 'A ship in port is safe, but that\'s not what ships are built for…this ship gonna take you to school.', 'One accurate measurement is worth a thousand expert opinions…you have been measured and found wanting.'],
   ['Guido Van Rossum', 'Python', 'Water', 'Now is better than never…now taste defeat.', 'Beautiful is better than ugly, explicit is better than implicit. The conundrum is your performance was explicitly ugly.'],
   ['Brendan Eich', 'JavaScript', 'Air', 'It took me ten days to write JavaScript..it’ll take me ten seconds to beat you.', 'Beating you was much less complicated than my programming language.']
 ];
