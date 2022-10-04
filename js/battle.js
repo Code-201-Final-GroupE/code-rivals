@@ -224,7 +224,8 @@ let npc_turn = function () {
 
   case 2:
     damage_dealt *= npc_element_check();
-    console.log(damage_dealt);
+    damage_dealt = Math.floor(damage_dealt);
+
     npc_message.innerHTML = `${npc.name} used a ${npc.element} attack to deal ${damage_dealt} damage. ${effective}`;
     player_character.health -= damage_dealt;
     round += 1;
@@ -263,6 +264,8 @@ let buttonHandler = function (event) {
 
   case 'element':
     damage_dealt *= player_element_check();
+    damage_dealt = Math.floor(damage_dealt);
+
     player_message.innerHTML = `${player_character.name} used a ${player_character.element} attack to deal ${damage_dealt} damage. ${effective}`;
     npc.health -= damage_dealt;
     break;
