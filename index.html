@@ -7,13 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/landing.css">
-  <script src="js/landing.js"></script>
   <title>Document</title>
   <link rel=“preconnect” href=“https://fonts.googleapis.com”>
   <link rel=“preconnect” href=“https://fonts.gstatic.com” crossorigin>
   <link href=“https://fonts.googleapis.com/css2?family=Silkscreen&display=swap” rel=“stylesheet”>
-
-
+  
 </head>
 
 <body>
@@ -37,16 +35,13 @@
 
   <main>
 
-    <form>
+    <form id="player-form">
       <ul>
-
-        <!-- For reference <label>Click me <input type="text" /></label> -->
-
 
         <li><label>What is your name?<input type="text" id="name" name="name" /></label></li>
 
-        <li><label for="language-pref">What's your favorite programming language?</label>
-          <select name="language-pref" id="language-pref">
+        <li><label for="language_pref">What's your favorite programming language?</label>
+          <select name="language_pref" id="language_pref">
             <option>JavaScript</option>
             <option>CSS</option>
             <option>Ruby</option>
@@ -54,10 +49,8 @@
           </select>
         </li>
 
-
-
-        <li><label for="element-pref">Elemental affinity?</label>
-          <select name="element-pref" id="element-pref">
+        <li><label for="element_pref">Elemental affinity?</label>
+          <select name="element_pref" id="element_pref">
             <option>Water</option>
             <option>Earth</option>
             <option>Wind</option>
@@ -65,13 +58,13 @@
           </select>
         </li>
 
-        <li><label>What do you say before a battle?<input type="text" name="start-quote" id="start-quote" /></label></li>
+        <li><label>What do you say before a battle?<input type="text" name="start_quote" id="start_quote" /></label></li>
 
-        <li><label>What do you say when you win a battle?<input type="text" name="win-quote" id="win-quote" /></label></li>
-
+        <li><label>What do you say when you win a battle?<input type="text" name="win_quote" id="win_quote" /></label></li>
+        <input type="submit" value="CREATE YOUR FIGHTER">
       </ul>
 
-      <input type="submit" value="CREATE YOUR FIGHTER">
+     
 
     </form>
 
@@ -87,5 +80,5 @@
 
 
 </body>
-
+<script src="js/landing.js"></script>
 </html>
