@@ -1,0 +1,167 @@
+/* 
+Color pallette reference:
+#29aa9c dark green
+#86ddd7 light green
+#eca7ec light pink
+#ec70da dark pink
+*/
+
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
+}
+
+
+
+/* Nav bar styling, and grid layout definitions */
+#about-button {
+  grid-area: right;
+}
+
+#code_rivals_logo {
+  grid-area: mid;
+}
+
+#landing-button {
+  grid-area: left;
+}
+
+/* Nav bar styling */
+nav {
+  background-color: #29aa9c;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "left mid right";
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 3px solid black;
+  border-top: hidden;
+  border-left: hidden;
+  border-right: hidden;
+}
+
+nav img {
+  margin: auto;
+  width: 400px;
+}
+
+nav button {
+  background-color: #86ddd7;
+  font-weight: 800;
+  font-size: larger;
+  padding-left: 10px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  margin: 80px;
+  border-radius: 15px;
+  border-width: 5px;
+}
+
+
+/* Define and layout the game screen grid display */
+#player-display-container {
+  grid-area: gameleft;
+
+}
+
+#central-container {
+  grid-area: gamemid;
+}
+
+#npc-display-container {
+  grid-area: gameright;
+}
+
+#game-display {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "gameleft gamemid gameright"
+}
+
+
+/* Player menu section. */
+#player-info {
+  background-color: grey;
+  width: 400px;
+  height: 150px;
+}
+
+#player-info h3 {
+  background-color: aliceblue;
+  width: 100px;
+  height: 50px;
+}
+
+#player-info .hp {
+  background-color: rgb(0, 64, 119);
+  float: right;
+  width: 150px;
+  height: 50px;
+}
+
+#player-hp-bar {
+  background-color: rgb(8, 243, 0);
+  width: 120px;
+  height: 10px;
+  border:1px;
+  border:solid;
+}
+
+
+/*Central menu section*/
+
+#round-container {
+  background-color: rgb(109, 117, 235);
+  margin:auto;
+  width: 100px;
+  height: 50px;
+}
+
+#message-container{
+  background-color: rgb(0, 14, 214);
+  margin:auto;
+  width: 200px;
+  height: 50px;
+}
+
+
+/* NPC menu section, a duplicate of the Player one. */
+#npc-info {
+  background-color: grey;
+  width: 400px;
+  height: 150px;
+}
+
+#npc-info h3 {
+  background-color: aliceblue;
+  width: 100px;
+  height: 50px;
+}
+
+#npc-info .hp {
+  background-color: rgb(0, 64, 119);
+  float: right;
+  width: 150px;
+  height: 50px;
+}
+
+#npc-hp-bar {
+  background-color: rgb(8, 243, 0);
+  width: 120px;
+  height: 10px;
+  border:1px;
+  border:solid;
+}
+
+
+
+
+footer {
+  margin: auto;
+  width: 100%;
+  height: 200px;
+}
