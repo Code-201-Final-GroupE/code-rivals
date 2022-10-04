@@ -11,11 +11,29 @@ body {
   font-size: large;
 }
 
+/* Grid layout definitions for the nav bar */
+#about-button {
+  grid-area: right;
+}
+
+#code_rivals_logo {
+  grid-area: mid;
+}
+
+#landing-button {
+  grid-area: left;
+}
+
+/* Nav bar styling */
 nav {
   background-color: #29aa9c;
-  margin-bottom: 10px;
-  padding-top: 50px;
-  padding-bottom: 100px;
+  display: grid;
+  grid-template-columns: 1fr 20px 1fr 20px 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "left . mid . right";
+  padding-top: 10px;
+  padding-bottom: 10px;
   border: 3px solid black;
   border-top: hidden;
   border-left: hidden;
@@ -23,33 +41,22 @@ nav {
 }
 
 nav img {
-  float: left;
-  width: 300px;
-  margin-left:10px;
-}
-
-h1 {
   margin: auto;
-  width: 50%;
-  font-size: 50px;
-  text-align: center;
+  height: 100px;
+  width:auto;
 }
 
 nav button {
-  float: right;
   background-color: #86ddd7;
   font-weight: 800;
   font-size: larger;
-  padding-left:10px;
-  padding-bottom:20px;
-  padding-top:20px;
-  margin:20px;
+  padding-left: 10px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  margin: 20px;
   border-radius: 15px;
   border-width: 5px;
-  position:relative;
-  top: -70px;
 }
-
 
 
 form {
