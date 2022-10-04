@@ -1,0 +1,138 @@
+/* 
+Color pallette reference:
+#29aa9c dark green
+#86ddd7 light green
+#eca7ec light pink
+#ec70da dark pink
+*/
+
+/* Styling that applies when nothing else does. */
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
+  background-color: rgb(240, 240, 240);
+}
+
+
+
+/* Grid layout definitions for the nav bar */
+#about-button {
+  grid-area: right;
+}
+
+#code_rivals_logo {
+  grid-area: mid;
+}
+
+#landing-button {
+  grid-area: left;
+}
+
+/* Nav bar styling */
+nav {
+  background-color: #29aa9c;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "left mid right";
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 3px solid black;
+  border-top: hidden;
+  border-left: hidden;
+  border-right: hidden;
+}
+
+nav img {
+  margin: auto;
+  width: 400px;
+}
+
+nav button {
+  background-color: #86ddd7;
+  font-weight: 800;
+  font-size: larger;
+  padding-left: 10px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  margin: 80px;
+  border-radius: 15px;
+  border-width: 5px;
+}
+
+/* Get our logo centered. */
+#logo-container {
+  text-align: center;
+}
+
+
+/* Dev card settings, that apply to all of them. */
+article {
+  font-size: large;
+  font-weight: 600;
+  display: grid;
+  margin-left: 10px;
+  margin-right: 10px;
+  grid-template-columns: 1fr 15px 1fr 15px 1fr 15px 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "ll . lc . rc . rr"
+}
+
+
+/* Apply grid definitions to each of the 4 developer profiles. 
+ll = leftleft
+lc = leftcenter
+rc =rightcenter
+rr = rightright
+*/
+
+/* Casey profile */
+article section:first-of-type {
+  grid-area: ll;
+  text-align: center;
+  border: 5px solid #ec70da;
+  border-radius: 20px;
+  background-color: blanchedalmond
+}
+
+/* Chris profile */
+section:nth-of-type(2) {
+  grid-area: lc;
+  text-align: center;
+  border: 5px solid #86ddd7;
+  border-radius: 20px;
+  background-color: blanchedalmond
+}
+
+/* Dennis profile */
+section:nth-of-type(3) {
+  grid-area: rc;
+  text-align: center;
+  border: 5px solid #eca7ec;
+  border-radius: 20px;
+  background-color: blanchedalmond
+}
+
+/* Isaiah profile */
+section:nth-of-type(4) {
+  grid-area: rr;
+  text-align: center;
+  border: 5px solid #29aa9c;
+  border-radius: 20px;
+  background-color: blanchedalmond
+}
+
+img {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  height: 100px;
+  width: 100px;
+}
+
+p {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 50px;
+}
