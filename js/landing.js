@@ -25,6 +25,7 @@ class Character {
     this.element = element;
     this.startQuote = start_quote;
     this.winQuote = win_quote;
+    this.defending = false;
     this.health = 100;
     this.wins = 0;
 

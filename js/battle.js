@@ -9,6 +9,9 @@ let npc;
 
 //DOM variables
 let round_display = document.getElementById('Round');
+let round = 1;
+round_display.innerHTML = round;
+
 let npc_message = document.getElementById('npc-message');
 let player_message = document.getElementById('player-message');
 let player_prompt = document.getElementById('player-prompt');
@@ -21,7 +24,7 @@ let defend_button = document.getElementById('action-four');
 let button_container = document.getElementById('button-container');
 
 //other default variables
-let round = 1;
+
 //-----------------PAGE LOAD EVENTS--------------
 
 window.onload = (event) => {
@@ -30,20 +33,20 @@ window.onload = (event) => {
   //randomly pick an npc from the array
 
   let npc_index = Math.floor(Math.random() * npc_array.length);
-  let npc = npc_array[npc_index];
+  npc = npc_array[npc_index];
   console.log(npc);
 
   //reminder to render player image
   //reminder to render npc image
 
   //display npc and character messages
-  npc_message.innerHTML = npc.startQuote;
-  player_message.innerHTML = player_character.startQuote;
+  npc_message.innerHTML = `${npc.name}: ${npc.startQuote}`;
+  player_message.innerHTML = `${player_character.name}: ${player_character.startQuote}`;
 
   //set player prompt text
   player_prompt.innerHTML = `What will ${player_character.name} do?`;
 
-  //set button text
+  //set button text and ids (ids needed for )
   language_button.innerHTML = `${player_character.language} Attack`;
   language_button.setAttribute('id', 'language');
 
@@ -57,13 +60,77 @@ window.onload = (event) => {
   defend_button.setAttribute('id', 'defend');
 };
 
+
 //-----ROUND LOGIC AND BUTTON EVENTS-----
 
+//checks if player is defending and adds damage modifier if so
+let defend_check = function () {
+  if (player_character.defending === true || npc.defending === true) {
+    return 0.6;
+  }
+  else return 1;
+};
+
+let battle_resolution = function () {
+
+  if (npc.health <= 0) {
+    npc_message.innerHTML = `${npc.name} was defeated!`;
+    player_message.innerHTML = player_character.winQuote;
+    player_character.wins += 1;
+  }
+  else if (player_character.health <= 0) {
+    npc_message.innerHTML = npc.winQuote;
+    player_message.innerHTML = `${player_character.name} was defeated!`;
+  }
+};
+
+//----------NPC TURN-----------------
+let npc_turn = function () {
+  //random generate number from 1 to 4
+  let random_action = Math.floor((Math.random() * 4) + 1);
+
+  //calculate base damage dealt to player
+  let damage_dealt = Math.floor(((Math.random() * 20) + 10) * defend_check());
+
+  //resolve action results
+  switch (random_action) {
+
+  case 1:
+    npc_message.innerHTML = `${npc.name} used a ${npc.language} attack to deal ${damage_dealt} damage.`;
+    player_character.health -= damage_dealt;
+    round += 1;
+    break;
+
+  case 2:
+    npc_message.innerHTML = `${npc.name} used a ${npc.element} attack to deal ${damage_dealt} damage.`;
+    player_character.health -= damage_dealt;
+    round += 1;
+    break;
+
+  case 3:
+    npc_message.innerHTML = `${npc.name} used a normal attack to deal ${damage_dealt} damage.`;
+    player_character.health -= damage_dealt;
+    round += 1;
+    break;
+
+  case 4:
+    npc_message.innerHTML = `${npc.name} is defending.`;
+    npc_message.defending = true;
+    round += 1;
+    break;
+  }
+  //check if battle is over
+  battle_resolution();
+  round_display.innerHTML = round;
+};
+
+//handler of battle logic
 let buttonHandler = function (event) {
+
+  //base damge calculator
+  let damage_dealt = Math.floor(((Math.random() * 20) + 10) * defend_check());
+
   // switch to decide behavior based on button pressed
-
-  let damage_dealt = Math.floor((Math.random() * 20) + 10);
-
   switch (event.target.id) {
 
   case 'language':
@@ -83,9 +150,14 @@ let buttonHandler = function (event) {
 
   case 'defend':
     player_message.innerHTML = `${player_character.name} is defending,`;
-
+    break;
   }
+
+  battle_resolution();
+  // see line 72 for npc_turn function declaration
+  npc_turn();
+  //see line ## for battle resoultion function
 };
 
-button_container.addEventListener('click', buttonHandler);
 
+button_container.addEventListener('click', buttonHandler);
