@@ -151,8 +151,12 @@ nav button {
   height: 150px;
   color: white;
   margin-top: 500px;
-  margin-right: 0px;
+  margin-left: 155px;
   
+}
+
+#language{
+  background-color: #eca7ec;
 }
 
 #npc-info h3 {
