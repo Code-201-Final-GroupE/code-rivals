@@ -18,7 +18,7 @@
   <header>
 
     <nav>
-      <!-- IMAGE TAG FOR LOGO <i></i> -->
+      <img src="img/codeRivals.png" alt="Code Rivals logo"> 
       <h1> Welcome To Code Rivals </h1>
 
       <button id="about-button">
@@ -34,6 +34,7 @@
   </header>
 
   <main>
+    <h2>Create your Code Warrior</h2>
 
     <form id="player-form">
       <ul>
@@ -57,14 +58,14 @@
             <option>Fire</option>
           </select>
         </li>
+      
+        <li id="start-quote-list"><label id="start-quote-label">What do you say before a battle?<input type="text" name="start-quote" id="start-quote" /></label></li>
 
-        <li><label>What do you say before a battle?<input type="text" name="start_quote" id="start_quote" /></label></li>
-
-        <li><label>What do you say when you win a battle?<input type="text" name="win_quote" id="win_quote" /></label></li>
-        <input type="submit" value="CREATE YOUR FIGHTER">
+        <li id="win-quote-list"><label id="win-quote-label">What do you say when you win a battle?<input type="text" name="win-quote" id="win-quote" /></label></li>
+       
       </ul>
 
-     
+      <input type="submit" id="submit-button" value="CREATE YOUR FIGHTER">
 
     </form>
 
