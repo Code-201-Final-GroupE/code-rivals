@@ -8,7 +8,7 @@ Color pallette reference:
 
 /* Pokemon fonts */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
 
 
 @font-face {
@@ -77,7 +77,17 @@ nav button {
   border-width: 5px;
 }
 
-
+#player-prompt{
+  margin-top: 50px;
+}
+#game-display {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "gameleft gamemid gameright"
+    "gameleft2 gamemid2 gameright2"
+}
 /* Define and layout the game screen grid display */
 #player-display-container {
   grid-area: gameleft;
@@ -92,41 +102,40 @@ nav button {
   grid-area: gameright;
 }
 
-#game-display {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  grid-template-areas:
-    "gameleft gamemid gameright"
-    "gameleft2 gamemid2 gameright2"
-}
+
 
 
 /* Player menu section. */
 #player-info {
   background-color: grey;
+  background-image: linear-gradient(#e1e1e1, #b9baba);
   width: 400px;
-  height: 150px;
+  height: 100px;
   margin-left: 100px;
+  border-radius: 10px;
+  border-style: double;
+  border-width: 5px;
+  border-color: darkslategrey;
 }
 
 #player-info h3 {
-  background-color: aliceblue;
-  width: 100px;
+  /* background-color: aliceblue; */
+  width: 150px;
   height: 50px;
 }
 
 #player-info .hp {
-  background-color: rgb(0, 64, 119);
-  float: right;
+  /* background-color: rgb(0, 64, 119); */
+  /* float: right; */
+  margin-left: 200px;
   width: 150px;
   height: 50px;
-  color: #f7f5f0;
+  color: black;
 }
 
 #player-hp-bar {
   background-color: #2fbd1a;
-  width: 120px;
+  width: 170px;
   min-width: 0px;
   height: 10px;
   border: 1px;
@@ -149,61 +158,99 @@ nav button {
   font-size: xx-large;
 }
 
-<<<<<<< Updated upstream
+
 #message-container {
-  background-color: rgb(0, 14, 214);
+  /* background-color: rgb(0, 14, 214); */
   margin: auto;
   width: 200px;
   height: 50px;
+  font-size: x-large;
 }
 
 /* NPC menu section, a duplicate of the Player one. */
 #npc-info {
   background-color: grey;
+  background-image: linear-gradient(#e1e1e1, #b9baba);
   width: 400px;
-  height: 150px;
+  height: 100px;
   color: white;
   margin-top: 00px;
-<<<<<<< Updated upstream
   margin-left: 155px;
-
-=======
   margin-right: 100px;
->>>>>>> Stashed changes
+  color: black;
+  font-family: 'Silkscreen';
+  border-radius: 10px;
+  border-style: double;
+  border-width: 5px;
+  border-color: darkslategrey;
 }
+
+
 
 #language {
   background-color: #eca7ec;
+  height: 112.5px;
+  width: 120px;
+  padding: 10px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-family: 'Silkscreen';
 }
 
 #element {
   background-color: #eca7ec;
+  height: 112.5px;
+  /* width: 120px; */
+  /* padding: 10px; */
+  /* margin-top: 50px; */
+  /* margin-bottom: 10px; */
+  /* border-radius: 5px; */
+  font-family: 'Silkscreen';
 }
 
 #npc-info h3 {
-  background-color: aliceblue;
-  width: 100px;
+  /* background-color: aliceblue; */
+  width: 150px;
   height: 50px;
 }
 
 #normal {
   background-color: #eca7ec;
+  height: 112.5px;
+  width: 120px;
+  padding: 10px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-family: 'Silkscreen';
+  
 }
 
 #defend {
   background-color: #eca7ec;
+  height: 112.5px;
+  width: 120px;
+  padding: 10px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-family: 'Silkscreen';
+  
 }
 
 #npc-info .hp {
-  background-color: rgb(0, 64, 119);
-  float: right;
+  /* background-color: rgb(0, 64, 119); */
+  border-radius: 5px;
+  /* float: right; */
+  margin-left: 200px;
   width: 150px;
-  height: 50px;
+  height: 40px;
 }
 
 #npc-hp-bar {
   background-color: #2fbd1a;
-  width: 120px;
+  width: 170px;
   min-width: 0px;
   height: 10px;
   border: 1px;
@@ -212,19 +259,16 @@ nav button {
 }
 
 .box {
-  font-size: 12px;
+  font-size: 15px;
   font-family: "Pokemon GB", Arial, sans-serif;
   border-radius: 10px;
-  padding: 30px;
+  padding: 50px;
   width: 200px;
   height: 28px;
   line-height: 16px;
-
   margin: auto;
   margin-top: 100px;
-
-
-  margin-left: 0px;
+  margin-left: 100px;
   background: white;
   border: 1px solid grey;
   box-shadow: 0 1px 0 1px black,
@@ -246,7 +290,7 @@ nav button {
 
 #npc-sprite {
 width: 400px;
-margin:25%;
+margin-left: 25%;
 
 }
 
@@ -273,12 +317,20 @@ margin:25%;
   width:500px;
 }
 
+#button-container{
+  height: 320px;
+  width: 400px;
+}
+
 #button-container button{
-  padding:5px;
+  background-color: #eca7ec;
+  width: 150px;
+  /* padding: 10px; */
   margin-top: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   border-radius: 5px;
 }
+
 
 
 
