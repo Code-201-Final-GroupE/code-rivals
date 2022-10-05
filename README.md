@@ -13,4 +13,23 @@ A game incorporating facts about code fellows members inspired by pokemon battle
 - Dennis Nichols  
 - Isaiah Mitchell   
 
+## Image attributions:
 
+https://upload.wikimedia.org/wikipedia/commons/3/3a/Alan_Turing_Age_16_Colorized.jpg
+
+PhotoColor, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons
+
+Photograph by Daniel Stroud, first retouched version uploaded by User:Deedub1983, second retouching by User:HarJIT., CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons
+
+https://upload.wikimedia.org/wikipedia/commons/e/e2/Guido-portrait-2014-drc.jpg
+
+Ada Lovelace
+Public domain image.
+
+https://upload.wikimedia.org/wikipedia/commons/3/37/Grace_Hopper_and_UNIVAC.jpg
+
+Unknown (Smithsonian Institution), CC BY 2.0 <https://creativecommons.org/licenses/by/2.0>, via Wikimedia Commons
+
+https://upload.wikimedia.org/wikipedia/commons/f/fe/Brendan_Eich_%284693852906%29.jpg
+
+Jonas Strandell from Västerås, Sweden, CC BY 2.0 <https://creativecommons.org/licenses/by/2.0>, via Wikimedia Commons
