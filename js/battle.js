@@ -24,9 +24,11 @@ let normal_button = document.getElementById('action-three');
 let defend_button = document.getElementById('action-four');
 let button_container = document.getElementById('button-container');
 
-//hp bars
+//hp bars and names
 let player_hp_display = document.getElementById('player-hp-bar');
 let npc_hp_display = document.getElementById('npc-hp-bar');
+let player_name_display = document.getElementById('player-name');
+let npc_name_display = document.getElementById('npc-name');
 
 let effective = ''; // extra or less effective message
 
@@ -42,8 +44,8 @@ window.onload = (event) => {
   let npc_index = Math.floor(Math.random() * npc_array.length);
   npc = npc_array[npc_index];
 
-  //reminder to render player image
-  //reminder to render npc image
+  player_name_display.innerHTML = player_character.name;
+  npc_name_display.innerHTML = npc.name;
 
   //display npc and character messages
   npc_message.innerHTML = `${npc.name}: ${npc.startQuote}`;
