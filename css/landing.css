@@ -11,7 +11,7 @@ body {
   font-size: large;
   margin: 0;
   width: 100vw;
-  height: 100vh;
+  height: 10vh;
 }
 
 /* Nav bar styling */
@@ -52,14 +52,18 @@ nav button {
 form {
   display: flex;
   background-color: slategray;
-  margin: auto;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 5px;
+  margin-left: auto;
+  margin-right: auto;
   width: 40%;
-  min-height: 22vw;
-  max-height: 50vw;
+  min-height: 50vh;
+  max-height: 100vh;
   padding-top: 0.5vw;
   padding-bottom: 1vw;
   margin-top: 2vw;
-  margin-bottom: 2vw;
+  /* margin-bottom: 2vw; */
   flex-direction: column;
   justify-content: space-around;
 }
@@ -69,7 +73,7 @@ ul {
   flex-direction: column;
   justify-content: space-around;
   align-content: center;
-  height: 20vw;
+  height: 30vw;
 }
 
 li {
@@ -78,9 +82,9 @@ li {
   font-weight: 700;
 
   margin-top: 0.5vw;
-  margin-bottom: 0.5vw;
-  padding-top: 0.5vw;
-  padding-bottom: 0.5vw;
+  margin-bottom: 0.5vh;
+  padding-top: 0.5vh;
+  padding-bottom: 0.5vh;
   margin: auto;
   text-align: center;
   margin: auto;
@@ -156,7 +160,10 @@ footer button {
 }
 
 footer {
-  margin: auto;
+  position: fixed;
+  padding: 10px 10px 0px 10px;
+  bottom: 0;
   width: 100%;
-  height: 15vw ;
+  /* Height of the footer*/
+  height: 170px;
 }
