@@ -54,9 +54,9 @@ form {
   background-color: slategray;
   margin: auto;
   width: 40%;
-  min-height: 23vw;
-  max-height: 30vw;
-  padding-top: 1vw;
+  min-height: 22vw;
+  max-height: 50vw;
+  padding-top: 0.5vw;
   padding-bottom: 1vw;
   margin-top: 2vw;
   margin-bottom: 2vw;
@@ -77,16 +77,14 @@ li {
   font-size: 1.3vw;
   font-weight: 700;
 
-  margin-top: 1vw;
-  margin-bottom: 1vw;
+  margin-top: 0.5vw;
+  margin-bottom: 0.5vw;
   padding-top: 0.5vw;
   padding-bottom: 0.5vw;
   margin: auto;
-  width: 80%;
   text-align: center;
-  padding-bottom: 40px;
   margin: auto;
-  width: 50%;
+  width: 70%;
   text-align: center;
 }
 
@@ -140,7 +138,7 @@ h2 {
   width: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
-  font-size: xx-large;
+  font-size: 2vw;
   text-align: center;
 }
 
@@ -149,16 +147,16 @@ footer button {
   width: 50%;
   margin-left: 25%;
   margin-top: 1vw;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
 
   background-color: #29aa9c;
-  font-size: x-large;
+  font-size: 2.5vw;
   text-align: center;
 }
 
 footer {
   margin: auto;
   width: 100%;
-  height: 200px;
+  height: 15vw ;
 }
