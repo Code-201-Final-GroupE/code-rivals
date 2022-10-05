@@ -23,6 +23,8 @@ let defend_button = document.getElementById('action-four');
 
 let button_container = document.getElementById('button-container');
 
+let effective = ''; // extra or less effective message
+
 //other default variables
 
 //-----------------PAGE LOAD EVENTS--------------
@@ -71,6 +73,132 @@ let defend_check = function () {
   else return 1;
 };
 
+// -----LANGUAGE ------------------------
+
+let language_check = function () {
+  if (player_character.language === npc.language) {
+    effective = `You both speak ${player_character.language}, extra effective!`;
+    return 1.3;
+  }
+  else {
+    effective = 'Some things were lost in translation, less effective.';
+  } return 1;
+};
+
+
+// ---- ELEMENTAL MODIFIER LOGIC, next section on line 184
+
+let player_element_check = function () {
+  if (player_character.element === npc.element) return 1;
+
+  switch (player_character.element) {
+
+  case 'Water':
+    if (npc.element === 'Fire') {
+      effective = 'It\'s very effective!';
+      return 1.2;
+    }
+    else if (npc.element === 'Air') {
+      effective = 'It\'s not very effective.';
+      return 0.6;
+    }
+    break;
+
+  case 'Earth':
+    if (npc.element === 'Air') {
+      effective = 'It\'s very effective!';
+      return 1.2;
+    }
+    else if (npc.element === 'Fire') {
+      effective = 'It\'s not very effective.';
+      return 0.6;
+    }
+    break;
+
+  case 'Fire':
+    if (npc.element === 'Earth') {
+      effective = 'It\'s very effective!';
+      return 1.2;
+    }
+    else if (npc.element === 'Water') {
+      effective = 'It\'s not very effective.';
+      return 0.6;
+    }
+    break;
+
+  case 'Air':
+    if (npc.element === 'Water') {
+      effective = 'It\'s very effective!';
+      return 1.2;
+    }
+    else if (npc.element === 'Earth') {
+      effective = 'It\'s not very effective.';
+      return 0.6;
+    }
+    break;
+
+  default:
+    return 1;
+
+  }
+};
+
+// --------------------------------------------------------------
+
+let npc_element_check = function () {
+
+  if (player_character.element === npc.element) return 1;
+
+  switch (npc.element) {
+
+  case 'Water':
+    if (player_character.element === 'Fire') {
+      effective = 'It\'s very effective!';
+      return 1.2;
+    }
+    else if (player_character.element === 'Air') {
+      effective = 'It\'s not very effective.';
+      return 0.6;
+    }
+    break;
+
+  case 'Earth':
+    if (player_character.element === 'Air') {
+      effective = 'It\'s very effective!';
+      return 1.2;
+    }
+    else if (player_character.element === 'Fire') {
+      effective = 'It\'s not very effective.';
+      return 0.6;
+    }
+    break;
+
+  case 'Fire':
+    if (player_character.element === 'Earth') {
+      effective = 'It\'s very effective!';
+      return 1.2;
+    }
+    else if (player_character.element === 'Water') {
+      effective = 'It\'s not very effective.';
+      return 0.6;
+    }
+    break;
+
+  case 'Air':
+    if (player_character.element === 'Water') {
+      effective = 'It\'s very effective!';
+      return 1.2;
+    }
+    else if (player_character.element === 'Earth') {
+      effective = 'It\'s not very effective.';
+      return 0.6;
+    }
+    break;
+  }
+};
+
+// ----------------------------------------------------------------
+
 let battle_resolution = function () {
 
   if (npc.health <= 0) {
@@ -85,24 +213,34 @@ let battle_resolution = function () {
 };
 
 //----------NPC TURN-----------------
+
 let npc_turn = function () {
+  effective = '';
   //random generate number from 1 to 4
   let random_action = Math.floor((Math.random() * 4) + 1);
 
   //calculate base damage dealt to player
   let damage_dealt = Math.floor(((Math.random() * 20) + 10) * defend_check());
+  console.log(damage_dealt);
 
   //resolve action results
   switch (random_action) {
 
   case 1:
-    npc_message.innerHTML = `${npc.name} used a ${npc.language} attack to deal ${damage_dealt} damage.`;
+    damage_dealt *= language_check();
+    damage_dealt = Math.floor(damage_dealt);
+
+    npc_message.innerHTML = `${npc.name} used a ${npc.language} attack to deal ${damage_dealt} damage. ${effective}`;
     player_character.health -= damage_dealt;
     round += 1;
     break;
 
   case 2:
-    npc_message.innerHTML = `${npc.name} used a ${npc.element} attack to deal ${damage_dealt} damage.`;
+    damage_dealt *= npc_element_check();
+    console.log(damage_dealt);
+    damage_dealt = Math.floor(damage_dealt);
+
+    npc_message.innerHTML = `${npc.name} used a ${npc.element} attack to deal ${damage_dealt} damage. ${effective}`;
     player_character.health -= damage_dealt;
     round += 1;
     break;
@@ -124,9 +262,10 @@ let npc_turn = function () {
   round_display.innerHTML = round;
 };
 
-//handler of battle logic
-let buttonHandler = function (event) {
+// --------BATTLE LOGIC IMPLEMENTED HERE----------------------------
 
+let buttonHandler = function (event) {
+  effective = '';
   //base damge calculator
   let damage_dealt = Math.floor(((Math.random() * 20) + 10) * defend_check());
 
@@ -134,12 +273,20 @@ let buttonHandler = function (event) {
   switch (event.target.id) {
 
   case 'language':
-    player_message.innerHTML = `${player_character.name} used a ${player_character.language} attack to deal ${damage_dealt} damage.`;
+    damage_dealt *= language_check();
+    damage_dealt = Math.floor(damage_dealt);
+
+    player_message.innerHTML = `${player_character.name} used a ${player_character.language} attack to deal ${damage_dealt} damage. ${effective}`;
     npc.health -= damage_dealt;
     break;
 
   case 'element':
-    player_message.innerHTML = `${player_character.name} used a ${player_character.element} attack to deal ${damage_dealt} damage.`;
+    damage_dealt *= player_element_check();
+    console.log(damage_dealt);
+    damage_dealt = Math.floor(damage_dealt);
+    console.log(damage_dealt);
+
+    player_message.innerHTML = `${player_character.name} used a ${player_character.element} attack to deal ${damage_dealt} damage. ${effective}`;
     npc.health -= damage_dealt;
     break;
 
