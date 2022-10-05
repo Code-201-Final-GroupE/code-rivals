@@ -58,7 +58,7 @@ form {
   margin-left: auto;
   margin-right: auto;
   width: 40%;
-  min-height: 50vh;
+  min-height: 30vh;
   max-height: 100vh;
   padding-top: 0.5vw;
   padding-bottom: 1vw;
@@ -73,7 +73,7 @@ ul {
   flex-direction: column;
   justify-content: space-around;
   align-content: center;
-  height: 30vw;
+  height: 40vh;
 }
 
 li {
@@ -81,15 +81,14 @@ li {
   font-size: 1.3vw;
   font-weight: 700;
 
-  margin-top: 0.5vw;
-  margin-bottom: 0.5vh;
-  padding-top: 0.5vh;
-  padding-bottom: 0.5vh;
-  margin: auto;
+  margin-top: 0.3vh;
+  margin-bottom: 0.3vh;
+  padding-top: 0.2vh;
+  padding-bottom: 0.2vh;
+  margin-right: auto;
+  margin-left: auto;
   text-align: center;
-  margin: auto;
   width: 70%;
-  text-align: center;
 }
 
 
@@ -104,9 +103,10 @@ li {
 
 select {
   margin-top: 0.5vw;
-  width: 25%;
+  width: 15vh;
   border-radius: 3px;
   border: 1px solid black;
+  text-align: center;
 }
 
 input[type = 'text'] {
