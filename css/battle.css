@@ -14,9 +14,9 @@ Color pallette reference:
 @font-face {
   font-family: "Pokemon GB";
   src: url("https://dl.dropboxusercontent.com/u/10822923/Pokemon_GB/Pokemon_GB.eot?") format("eot"),
-       url("https://dl.dropboxusercontent.com/u/10822923/Pokemon_GB/Pokemon_GB.woff") format("woff"),
-       url("https://dl.dropboxusercontent.com/u/10822923/Pokemon_GB/Pokemon_GB.ttf") format("truetype"),
-       url("https://dl.dropboxusercontent.com/u/10822923/Pokemon_GB/Pokemon_GB.svg#PokemonGB") format("svg");
+    url("https://dl.dropboxusercontent.com/u/10822923/Pokemon_GB/Pokemon_GB.woff") format("woff"),
+    url("https://dl.dropboxusercontent.com/u/10822923/Pokemon_GB/Pokemon_GB.ttf") format("truetype"),
+    url("https://dl.dropboxusercontent.com/u/10822923/Pokemon_GB/Pokemon_GB.svg#PokemonGB") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -60,7 +60,7 @@ nav {
 nav img {
   margin: auto;
   height: 100px;
-  width:auto;
+  width: auto;
 }
 
 nav button {
@@ -96,6 +96,7 @@ nav button {
   grid-template-rows: auto;
   grid-template-areas:
     "gameleft gamemid gameright"
+    "gameleft2 gamemid2 gameright2"
 }
 
 
@@ -124,9 +125,9 @@ nav button {
   background-color: #2fbd1a;
   width: 120px;
   height: 10px;
-  border:1px;
-  border:solid;
-  color:#434943;
+  border: 1px;
+  border: solid;
+  color: #434943;
 }
 
 
@@ -134,19 +135,19 @@ nav button {
 
 #round-container {
   background-color: rgb(221, 221, 221);
-  margin:auto;
+  margin: auto;
   text-align: center;
   width: 100px;
   height: 50px;
   margin-top: 50px;
   border-radius: 20px;
-  border:solid;
-  font-size:xx-large;
+  border: solid;
+  font-size: xx-large;
 }
 
-#message-container{
+#message-container {
   background-color: rgb(0, 14, 214);
-  margin:auto;
+  margin: auto;
   width: 200px;
   height: 50px;
 }
@@ -160,14 +161,14 @@ nav button {
   color: white;
   margin-top: 00px;
   margin-left: 155px;
-  
+
 }
 
-#language{
+#language {
   background-color: #eca7ec;
 }
 
-#element{
+#element {
   background-color: #eca7ec;
 }
 
@@ -177,11 +178,11 @@ nav button {
   height: 50px;
 }
 
-#normal{
+#normal {
   background-color: #eca7ec;
 }
 
-#defend{
+#defend {
   background-color: #eca7ec;
 }
 
@@ -196,9 +197,9 @@ nav button {
   background-color: #2fbd1a;
   width: 120px;
   height: 10px;
-  border:1px;
-  border:solid;
-  color: #434943 ;
+  border: 1px;
+  border: solid;
+  color: #434943;
 }
 
 .box {
@@ -215,13 +216,13 @@ nav button {
   background: white;
   border: 1px solid grey;
   box-shadow: 0 1px 0 1px black,
-              inset 0 1px 0 1px black,
-              0 0 0 1px black,
-              inset 0 0 0 1px black; 
+    inset 0 1px 0 1px black,
+    0 0 0 1px black,
+    inset 0 0 0 1px black;
 }
 
 
-.box > i {
+.box>i {
   width: 0;
   height: 0;
   border: 5px solid transparent;
@@ -231,11 +232,41 @@ nav button {
   float: right;
 }
 
+#npc-sprite {
+width: 400px;
+margin:25%;
+
+}
+
+#player-sprite {
+  position:relative;
+  top: 60px;
+  width: 300px;
+  margin-right:25%;
+  margin-top: 25%;
+}
 
 @keyframes bounce {
-  from { margin-top: 20px; }
-  to { margin-top: 23px; }
+  from {
+    margin-top: 20px;
+  }
+
+  to {
+    margin-top: 23px;
+  }
 }
+
+#game-menu{
+  margin:auto;
+  width:500px;
+}
+
+#button-container button{
+  padding:5px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
 
 
 footer {
