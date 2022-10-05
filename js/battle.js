@@ -7,21 +7,26 @@ let player_character = JSON.parse(localStorage.getItem('player-character'));
 let npc_array = JSON.parse(localStorage.getItem('npc_array'));
 let npc;
 
-//DOM variables
+//round counter
 let round_display = document.getElementById('Round');
 let round = 1;
 round_display.innerHTML = round;
 
+//messages
 let npc_message = document.getElementById('npc-message');
 let player_message = document.getElementById('player-message');
 let player_prompt = document.getElementById('player-prompt');
 
+//buttons
 let language_button = document.getElementById('action-one');
 let element_button = document.getElementById('action-two');
 let normal_button = document.getElementById('action-three');
 let defend_button = document.getElementById('action-four');
-
 let button_container = document.getElementById('button-container');
+
+//hp bars
+let player_hp_display = document.getElementById('player-hp-bar');
+let npc_hp_display = document.getElementById('npc-hp-bar');
 
 let effective = ''; // extra or less effective message
 
@@ -36,7 +41,6 @@ window.onload = (event) => {
 
   let npc_index = Math.floor(Math.random() * npc_array.length);
   npc = npc_array[npc_index];
-  console.log(npc);
 
   //reminder to render player image
   //reminder to render npc image
@@ -89,6 +93,7 @@ let language_check = function () {
 // ---- ELEMENTAL MODIFIER LOGIC, next section on line 184
 
 let player_element_check = function () {
+
   if (player_character.element === npc.element) return 1;
 
   switch (player_character.element) {
@@ -102,7 +107,7 @@ let player_element_check = function () {
       effective = 'It\'s not very effective.';
       return 0.6;
     }
-    break;
+    else return 1;
 
   case 'Earth':
     if (npc.element === 'Air') {
@@ -113,7 +118,7 @@ let player_element_check = function () {
       effective = 'It\'s not very effective.';
       return 0.6;
     }
-    break;
+    else return 1;
 
   case 'Fire':
     if (npc.element === 'Earth') {
@@ -124,7 +129,7 @@ let player_element_check = function () {
       effective = 'It\'s not very effective.';
       return 0.6;
     }
-    break;
+    else return 1;
 
   case 'Air':
     if (npc.element === 'Water') {
@@ -135,7 +140,7 @@ let player_element_check = function () {
       effective = 'It\'s not very effective.';
       return 0.6;
     }
-    break;
+    else return 1;
 
   default:
     return 1;
@@ -160,7 +165,7 @@ let npc_element_check = function () {
       effective = 'It\'s not very effective.';
       return 0.6;
     }
-    break;
+    else return 1;
 
   case 'Earth':
     if (player_character.element === 'Air') {
@@ -171,7 +176,7 @@ let npc_element_check = function () {
       effective = 'It\'s not very effective.';
       return 0.6;
     }
-    break;
+    else return 1;
 
   case 'Fire':
     if (player_character.element === 'Earth') {
@@ -182,7 +187,7 @@ let npc_element_check = function () {
       effective = 'It\'s not very effective.';
       return 0.6;
     }
-    break;
+    else return 1;
 
   case 'Air':
     if (player_character.element === 'Water') {
@@ -193,7 +198,7 @@ let npc_element_check = function () {
       effective = 'It\'s not very effective.';
       return 0.6;
     }
-    break;
+    else return 1;
   }
 };
 
@@ -212,6 +217,46 @@ let battle_resolution = function () {
   }
 };
 
+// -----------HP UPDATE----------------------------------
+
+let player_hp_update = function () {
+  let hp_width = Math.floor((player_character.health /100) * 120) + 'px';
+  //set width of hp bar
+  if (player_character.health <= 0) {
+    player_hp_display.style.width = '0px';
+  }
+  else {
+    player_hp_display.style.width = hp_width;
+  }
+
+  //set color of hp bar
+  if (player_character.health < 30) {
+    player_hp_display.style.backgroundColor = 'red';
+  }
+  else if (player_character.health < 70) {
+    player_hp_display.style.backgroundColor = 'yellow';
+  }
+};
+
+let npc_hp_update = function () {
+  let hp_width = Math.floor((npc.health / 100) * 120) + 'px';
+  //set width of hp bar
+  if (npc.health <= 0) {
+    npc_hp_display.style.width = '0px';
+  }
+  else {
+    npc_hp_display.style.width = hp_width;
+  }
+
+
+  if (npc.health < 30) {
+    npc_hp_display.style.backgroundColor = 'red';
+  }
+  else if (npc.health < 70) {
+    npc_hp_display.style.backgroundColor = 'yellow';
+  }
+};
+
 //----------NPC TURN-----------------
 
 let npc_turn = function () {
@@ -221,7 +266,6 @@ let npc_turn = function () {
 
   //calculate base damage dealt to player
   let damage_dealt = Math.floor(((Math.random() * 20) + 10) * defend_check());
-  console.log(damage_dealt);
 
   //resolve action results
   switch (random_action) {
@@ -237,7 +281,6 @@ let npc_turn = function () {
 
   case 2:
     damage_dealt *= npc_element_check();
-    console.log(damage_dealt);
     damage_dealt = Math.floor(damage_dealt);
 
     npc_message.innerHTML = `${npc.name} used a ${npc.element} attack to deal ${damage_dealt} damage. ${effective}`;
@@ -257,6 +300,10 @@ let npc_turn = function () {
     round += 1;
     break;
   }
+
+  //update hp display
+  player_hp_update();
+  console.log(player_character.health);
   //check if battle is over
   battle_resolution();
   round_display.innerHTML = round;
@@ -282,16 +329,14 @@ let buttonHandler = function (event) {
 
   case 'element':
     damage_dealt *= player_element_check();
-    console.log(damage_dealt);
     damage_dealt = Math.floor(damage_dealt);
-    console.log(damage_dealt);
 
     player_message.innerHTML = `${player_character.name} used a ${player_character.element} attack to deal ${damage_dealt} damage. ${effective}`;
     npc.health -= damage_dealt;
     break;
 
   case 'normal':
-    player_message.innerHTML = `${player_character.name} used a ${player_character.normal} attack to deal ${damage_dealt} damage.`;
+    player_message.innerHTML = `${player_character.name} used a normal attack to deal ${damage_dealt} damage.`;
     npc.health -= damage_dealt;
     break;
 
@@ -299,6 +344,10 @@ let buttonHandler = function (event) {
     player_message.innerHTML = `${player_character.name} is defending,`;
     break;
   }
+
+  //update hp display
+  npc_hp_update();
+
 
   battle_resolution();
   // see line 72 for npc_turn function declaration
