@@ -127,6 +127,7 @@ nav button {
 #player-hp-bar {
   background-color: #2fbd1a;
   width: 120px;
+  min-width: 0px;
   height: 10px;
   border: 1px;
   border: solid;
@@ -199,6 +200,7 @@ nav button {
 #npc-hp-bar {
   background-color: #2fbd1a;
   width: 120px;
+  min-width: 0px;
   height: 10px;
   border: 1px;
   border: solid;
