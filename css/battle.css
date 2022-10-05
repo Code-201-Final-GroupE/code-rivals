@@ -8,6 +8,9 @@ Color pallette reference:
 
 /* Pokemon fonts */
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+
 @font-face {
   font-family: "Pokemon GB";
   src: url("https://dl.dropboxusercontent.com/u/10822923/Pokemon_GB/Pokemon_GB.eot?") format("eot"),
@@ -151,7 +154,7 @@ nav button {
   width: 400px;
   height: 150px;
   color: white;
-  margin-top: 500px;
+  margin-top: 00px;
   margin-left: 155px;
   
 }
@@ -160,10 +163,22 @@ nav button {
   background-color: #eca7ec;
 }
 
+#element{
+  background-color: #eca7ec;
+}
+
 #npc-info h3 {
   background-color: aliceblue;
   width: 100px;
   height: 50px;
+}
+
+#normal{
+  background-color: #eca7ec;
+}
+
+#defend{
+  background-color: #eca7ec;
 }
 
 #npc-info .hp {
