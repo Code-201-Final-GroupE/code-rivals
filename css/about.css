@@ -69,7 +69,7 @@ nav button {
 }
 
 #production-logo {
-  width: 500px;
+  width: 15vw;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -144,3 +144,31 @@ p {
   padding-left: 10px;
   padding-bottom: 50px;
 }
+
+.modal {
+  padding: 1em;
+  max-width:80ch;
+  border: 0;
+  box-shadow: 0 0 1em rgb(0 0 0 / .3);
+  text-align: center;
+
+  & > * {
+    margin: 0 0 0.5rem 0;
+  }
+}
+
+.modal::backdrop {
+  background: rgb(0 0 0 / 0.4);
+}
+
+#modal-button {
+  font-size: larger;
+  font-weight: bolder;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: black;
+  color: white;
+}
+
+/* .button-container {
+  width: 15vw;
+} */
