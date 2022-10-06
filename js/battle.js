@@ -384,13 +384,13 @@ let buttonHandler = function (event) {
           langRef.style.opacity = .25;
           setTimeout(() => {
             langRef.style.opacity = 0;
-          }, "100");
+          }, '100');
 
-        }, "100");
+        }, '100');
 
-      }, "100");
+      }, '100');
 
-    }, "300");
+    }, '300');
 
 
 
