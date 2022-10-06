@@ -96,8 +96,8 @@ window.onload = (event) => {
   defend_button.innerHTML = 'Defend';
   defend_button.setAttribute('id', 'defend');
 
-
-
+  element_button.className = `${player_character.element}`;
+  console.log(element_button.className);
 };
 
 
