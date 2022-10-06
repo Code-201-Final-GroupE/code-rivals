@@ -25,6 +25,8 @@ body {
 
 #code_rivals_logo {
   grid-area: mid;
+  height: 100px;
+  width:auto;
 }
 
 #landing-button {
@@ -46,11 +48,6 @@ nav {
   border-right: hidden;
 }
 
-#code_rivals_logo {
-  margin: auto;
-  width: 200px;
-}
-
 nav button {
   background-color: #86ddd7;
   font-weight: 800;
@@ -59,8 +56,10 @@ nav button {
   padding-bottom: 20px;
   padding-top: 20px;
   margin: 20px;
+  margin-bottom: 0px;
   border-radius: 15px;
   border-width: 5px;
+  width: 90%;
 }
 
 /* Get our logo centered. */
@@ -69,7 +68,7 @@ nav button {
 }
 
 #production-logo {
-  width: 15vw;
+  width: 10vw;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -161,15 +160,22 @@ p {
   background: rgb(0 0 0 / 0.4);
 }
 
-#modal-button {
+#modalbutton {
   font-size: larger;
   font-weight: bolder;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Silkscreen';
   background-color: black;
   color: white;
+  border-radius: 15px;
 }
 
 .button-container {
   display: flex;
   justify-content: space-around;
+}
+
+h2 {
+  font-size: larger;
+  font-weight: bolder;
+  font-family: 'Silkscreen';
 }
