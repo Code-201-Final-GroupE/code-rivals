@@ -343,18 +343,18 @@ border-radius: 10px;
 
 footer {
   width: 84vw;
-  height: 250px;
+  height: 20vh;
   padding-right: 8vw;
   padding-left: 8vw;
   background-color: #eca7ec;
-  padding-top: 2vh;
+  padding-top: 3vh;
 }
 
 #game-menu {
   display: flex;
-  height:200px;
+  height:18vh;
   justify-content: space-around;
-  /* align-items: center; */
+  align-items: center;
 }
 
 #player-prompt-container{
@@ -362,6 +362,9 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  height: 10vh;
+  align-self: center;
+  margin-top: auto;
 }
 
 #player-prompt{
@@ -382,32 +385,38 @@ footer {
 
 #button-container button{
   background-color: silver;
-  width: 40%;
-  height: 80px;
+  width: 45%;
+  height: 8vh;
   margin-top: 5px;
   margin-bottom: 5px;
   border-radius: 5px;
-  font-size: 2vh;
+  font-size: 2.5vh;
 }
+
+#button-container button:hover {
+  font-size: 3vh;
+  color: white;
+}
+
 
 #button-container .Earth:hover {
   /* background-color: brown ; */
   color: brown;
-  font-size: 2.5vh;
 }
 
 #button-container .Fire:hover {
   /* background-color: red; */
   color: red;
-  font-size: 2.5vh;
 }
 
 #button-container .Water:hover {
   color: blue;
-  font-size: 2.5vh;
 }
 
 #button-container .Air:hover {
-  color: white;
-  font-size: 2.5vh;
+  color: lightblue;
+}
+
+strong {
+  font-weight: bold;
 }
