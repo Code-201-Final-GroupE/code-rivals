@@ -426,3 +426,37 @@ footer {
 strong {
   font-weight: bold;
 }
+
+#button-container .JavaScript:hover {
+  /* background-color: brown ; */
+  color: transparent;
+  background-image: url('../img/java.png');
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-size: 20%;
+}
+
+#button-container .Ruby:hover {
+  /* background-color: red; */
+  color: transparent;
+  background-image: url('../img/ruby.png');
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-size: 15%;
+}
+
+#button-container .CSS:hover {
+  color: transparent;
+  background-image: url('../img/css.png');
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-size: 20%;
+}
+
+#button-container .Python:hover {
+  color: transparent;
+  background-image: url('../img/python.png');
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-size: 20%;
+}

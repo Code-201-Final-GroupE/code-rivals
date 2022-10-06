@@ -111,7 +111,7 @@ window.onload = (event) => {
   defend_button.setAttribute('id', 'defend');
 
   element_button.className = `${player_character.element}`;
-  console.log(element_button.className);
+  language_button.className = `${player_character.language}`;
 };
 
 
