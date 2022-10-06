@@ -1,0 +1,265 @@
+/* 
+Color pallette reference:
+#29aa9c dark green
+#86ddd7 light green
+#eca7ec light pink
+#ec70da dark pink
+*/
+
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
+  margin: 0;
+  width: 100vw;
+  height: 10vh;
+}
+
+/* Nav bar styling */
+nav {
+  background-color: #29aa9c;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10vw;
+  padding-left: 10vw;
+  border: 3px solid black;
+  border-top: hidden;
+  border-left: hidden;
+  border-right: hidden;
+}
+
+nav img {
+  height: 100px;
+  width:auto;
+}
+
+nav button {
+  background-color: #86ddd7;
+  font-weight: 800;
+  font-size: larger;
+  padding-left: 10px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  margin: 20px;
+  margin-bottom: 0px;
+  border-radius: 15px;
+  border-width: 5px;
+  width: 90%;
+}
+
+#about-button {
+  grid-area: right;
+  width: 14rem;
+}
+#battle-button {
+  grid-area: left;
+  width: 14rem;
+}
+
+
+form {
+  display: flex;
+  background-color: slategray;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  min-height: 50vh;
+  max-height: 100vh;
+  padding-top: 0.5vw;
+  padding-bottom: 1vw;
+  margin-top: 2vw;
+  /* margin-bottom: 2vw; */
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  height: 40vh;
+}
+
+li {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.8vh;
+  font-weight: 700;
+  margin-top: 0.3vh;
+  margin-bottom: 0.3vh;
+  padding-top: 0.2vh;
+  padding-bottom: 0.2vh;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  width: 70%;
+}
+
+
+#start-quote {
+  width: 400px;
+  font-size: large;
+}
+
+#start-quote-label {
+  max-width: 100px;
+}
+
+select {
+  margin-top: 0.5vw;
+  width: 15vh;
+  border-radius: 3px;
+  border: 1px solid black;
+  text-align: center;
+  height: 2.2vh;
+  font-size: 1.5vh;
+}
+
+input[type = 'text'] {
+  margin-top: 0.5vw;
+  width: 50%;
+  border-radius: 3px;
+  border: 1px solid black;
+  font-size: 1.5vh;
+  height: 2vh;
+}
+
+#submit-button {
+
+  color: #29aa9c;
+  margin: auto;
+  width: 60%;
+  margin-left: auto;
+  margin-right:auto;
+  font-weight: 800;
+  font-size: 1.25vw;
+  padding-top: 0.5vw;
+  padding-bottom: 0.5vw;
+}
+
+
+footer {
+  position: fixed;
+  padding-bottom: 2vh;
+  bottom: 0;
+  width: 100%;
+  /* Height of the footer*/
+  height: 20vh;
+  background-color: #ec70da;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+h2 {
+  background-color: #eca7ec;
+  margin: auto;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 2vw;
+  text-align: center;
+}
+
+footer button {
+  width: 35vw;
+  margin-top: 1vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  background-color: #29aa9c;
+  font-size: 2.3vw;
+  text-align: center;
+  border-radius: 15px;
+}
+
+<<<<<<< Updated upstream
+=======
+footer {
+  position: fixed;
+  padding: 10px 10px 0px 10px;
+  bottom: 0;
+  width: 100%;
+  /* Height of the footer*/
+  height: 170px;
+}
+
+/* -webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+body {
+background: #ecf0f1;
+}
+.center-on-page {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+}
+/* Poké Styles */
+/* .pokeball {
+position: relative;
+width: 200px;
+height: 200px;
+background: #fff;
+border: 10px solid #000;
+border-radius: 50%;
+overflow: hidden;
+box-shadow: inset -10px 10px 0 10px #ccc;
+animation: fall .25s ease-in-out,
+           shake 1.25s cubic-bezier(.36,.07,.19,.97) 3;
+}
+.pokeball::before,
+.pokeball::after {
+content:"";
+position: absolute;
+}
+.pokeball::before {
+background: #ec70da;
+width: 100%;
+height: 50%;
+}
+.pokeball::after {
+top: calc(50% - 10px);
+width: 100%;
+height: 20px;
+background: #000;
+}
+.pokeball__button {
+position: absolute;
+top: calc(50% - 30px);
+left: calc(50% - 30px);
+width: 60px;
+height: 60px;
+background: #7f8c8d;
+border: 10px solid #fff;
+border-radius: 50%;
+z-index: 10;
+box-shadow: 0 0 0 10px black;
+animation: blink .5s alternate 7;
+} */
+/* Animation */
+/* @keyframes blink {
+from { background: #eee;}
+to { background: #e74c3c; }
+}
+@keyframes shake {
+0 { transform: translate(0, 0) rotate(0); }
+20% { transform: translate(-10px, 0) rotate(-20deg); }
+30% { transform: translate(10px, 0) rotate(20deg); }
+50% { transform: translate(-10px, 0) rotate(-10deg); }
+60% { transform: translate(10px, 0) rotate(10deg); }
+100% { transform: translate(0, 0) rotate(0); }
+}
+@keyframes fall {
+0% { top: -200px }
+60% { top: 0 }
+80% { top: -20px }
+100% { top: 0 }
+}  */
+>>>>>>> Stashed changes

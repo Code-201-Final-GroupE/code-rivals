@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/battle.css">
+  <title>Code Rivals: Battle</title>
+  <link rel=“preconnect” href=“https://fonts.googleapis.com”>
+  <link rel=“preconnect” href=“https://fonts.gstatic.com” crossorigin>
+  <link href=“https://fonts.googleapis.com/css2?family=Silkscreen&display=swap” rel=“stylesheet”>
+
+</head>
+
+<body>
+
+  <!-- <iframe src="IsaiahsPokemonBattleBeat.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+  </iframe>  -->
+
+
+  <!-- <audio controls autoplay loop>
+    <source src="IsaiahsPokemonBattleBeat.mp3" type="audio/mpeg">
+  </audio> -->
+  <nav>
+    
+    <a href="about.html"><button id="about-button">About Us</button></a>
+    <img id="code_rivals_logo" src="img/codeRivals.png" alt="Code Rivals logo"> 
+    <a href="index.html"><button id="landing-button">Main Page</button></a>
+
+
+  </nav>
+
+  <main>
+
+    <section id="game-display">
+
+      <div class="display-container" id="player-display-container">
+        <div id="player-info">
+          <h3 class="name" id="player-name"></h3>
+          <div class="hp">
+            <p>HP</p>
+            <div id="hp-background">
+              <p id="player-hp-bar"></p>
+            </div>
+          </div>
+        </div>
+        <img id='player-sprite' src="img/player.png" alt="The player's sprite">
+      </div>
+
+      <div id="central-container">
+
+        <div id="round-container">
+          <h2 >Round <span id="Round"></span></h2>
+        </div>
+
+        <!-- <div id="message-container"> -->
+          <p id="player-message" class="box"><i></i></p>
+          <p id="npc-message" class="box"><i></i></p>
+        <!-- </div> -->
+   
+
+      </div>
+
+      <div class="display-container" id="npc-display-container">
+        <div id="npc-info">
+          <h3 class="name" id="npc-name"></h3>
+          <div class="hp">
+            <p>HP</p>
+            <div id="hp-background">
+              <p id="npc-hp-bar"></p>
+            </div>
+          </div>
+        </div>
+        <img id='npc-sprite' src="img/dummylink.png" alt="Javascript is needed for function of this site.">
+        <img id='lang-sprite' src="img/dummylink.png" alt="your language attack sprite">
+      </div>
+
+    </section>
+
+     <footer> 
+    <section id="game-menu">
+      <div class = 'box' id="player-prompt-container">
+        <p id="player-prompt">
+        </p>
+        <i class="fa fa-long-arrow-right arrow1" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div id="button-container">
+        <button id="action-one"></button>
+        <button id="action-two"></button>
+        <button id="action-three"></button>
+        <button id="action-four"></button>
+      </div>
+    </section>
+  </footer>
+      
+
+  </main>
+
+
+
+</body>
+
+<script src="js/battle.js"></script>
+</html>
+

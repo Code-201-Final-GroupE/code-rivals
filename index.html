@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <title>Code Rivals</title>
+  <link rel=“preconnect” href=“https://fonts.googleapis.com”>
+  <link rel=“preconnect” href=“https://fonts.gstatic.com” crossorigin>
+  <link href=“https://fonts.googleapis.com/css2?family=Silkscreen&display=swap” rel=“stylesheet”>
+  
+</head>
+
+<body>
+  <header>
+
+    <nav>
+      <a href="about.html"><button id="about-button">About Us</button></a>
+      <img id="code_rivals_logo" src="img/codeRivals.png" alt="Code Rivals logo">
+      <a href="battle.html"><button id="battle-button">Battle Arena</button></a>
+    </nav>
+
+  </header>
+
+  <main>
+    <h2>Create your Code Warrior</h2>
+    <!-- <div class="center-on-page">
+  
+      <div class="pokeball">
+        <div class="pokeball__button"></div>
+      </div>
+      </div> -->
+  
+    <form id="player-form">
+      <ul>
+
+        <li><label>What is your name?<br>
+          <input required type="text" id="name" name="name" /></label></li>
+
+        <li><label for="language_pref">Favorite programming language?<br>
+        </label>
+          <select name="language_pref" id="language_pref">
+            <option>JavaScript</option>
+            <option>CSS</option>
+            <option>Ruby</option>
+            <option>Python</option>
+          </select>
+        </li>
+
+        <li><label for="element_pref">Elemental affinity?<br>
+        </label>
+          <select name="element_pref" id="element_pref">
+            <option>Water</option>
+            <option>Earth</option>
+            <option>Air</option>
+            <option>Fire</option>
+          </select>
+        </li>
+      
+        <li id="start-quote-list"><label id="start-quote-label">What do you say before a battle?<br>
+          <input required type="text" name="start_quote" id="start_quote" /></label></li>
+
+        <li id="win-quote-list"><label id="win-quote-label">What do you say when you win a battle?<br>
+          <input required type="text" name="win_quote" id="win_quote" /></label></li><br>
+       
+      </ul>
+
+      <input type="submit" id="submit-button" value="CREATE YOUR FIGHTER">
+
+    </form>
+ <footer>
+
+
+
+    <h2>ARE YOU BATTLE READY?</h2>
+
+    <a href="battle.html"><button hidden id="start-battle">START BATTLE!</button></a>
+
+  </footer>
+  </main>
+
+ 
+
+</body>
+<script src="js/landing.js"></script>
+</html>
