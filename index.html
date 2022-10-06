@@ -32,7 +32,7 @@
       <ul>
 
         <li><label>What is your name?<br>
-          <input type="text" id="name" name="name" /></label></li>
+          <input required type="text" id="name" name="name" /></label></li>
 
         <li><label for="language_pref">What's your favorite programming language?<br>
         </label>
@@ -55,10 +55,10 @@
         </li>
       
         <li id="start-quote-list"><label id="start-quote-label">What do you say before a battle?<br>
-          <input type="text" name="start_quote" id="start_quote" /></label></li>
+          <input required type="text" name="start_quote" id="start_quote" /></label></li>
 
         <li id="win-quote-list"><label id="win-quote-label">What do you say when you win a battle?<br>
-          <input type="text" name="win_quote" id="win_quote" /></label></li>
+          <input required type="text" name="win_quote" id="win_quote" /></label></li>
        
       </ul>
 
@@ -72,7 +72,7 @@
 
     <h2>ARE YOU BATTLE READY?</h2>
 
-    <a href="battle.html"><button id="start-battle">START BATTLE!</button></a>
+    <a href="battle.html"><button hidden id="start-battle">START BATTLE!</button></a>
 
   </footer>
 

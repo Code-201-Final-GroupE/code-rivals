@@ -4,6 +4,7 @@ let new_player;
 let npc_array = [];
 
 const form = document.getElementById('player-form');
+const startButton = document.getElementById('start-battle')
 
 //-----------------NPC  ATTRIBUTE ARRAY--------------
 
@@ -51,6 +52,7 @@ const handle_submit = (event) => {
   alert(`A new fighter named ${new_name} was successfully created! See you in the ring, champ.`);
   //reset form fields
   form.reset();
+  startButton.removeAttribute('hidden');
 };
 
 
