@@ -21,6 +21,7 @@ body {
 /* Grid layout definitions for the nav bar */
 #about-button {
   grid-area: right;
+  width: 14rem;
 }
 
 #code_rivals_logo {
@@ -29,8 +30,9 @@ body {
   width:auto;
 }
 
-#landing-button {
+#battle-button {
   grid-area: left;
+  width: 14rem;
 }
 
 /* Nav bar styling */
