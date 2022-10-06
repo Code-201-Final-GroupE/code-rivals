@@ -258,11 +258,13 @@ let battle_resolution = function () {
     npc_message.innerHTML = `${npc.name} was defeated!`;
     player_message.innerHTML = player_character.winQuote;
     player_character.wins += 1;
+    return true;
   }
   else if (player_character.health <= 0) {
     npc_message.innerHTML = npc.winQuote;
     player_message.innerHTML = `${player_character.name} was defeated!`;
-  }
+    return true;
+  } else return false;
 };
 
 // -----------HP UPDATE----------------------------------
@@ -309,6 +311,23 @@ let npc_hp_update = function () {
 
 let npc_turn = function () {
   effective = '';
+
+  let el_span = '';
+  switch (npc.element) {
+  case 'Earth':
+    el_span = `<span style = 'color: brown; font-weight: bold'>${npc.element}</span>`;
+    break;
+  case 'Water':
+    el_span = `<span style = 'color: blue; font-weight: bold'>${npc.element}</span>`;
+    break;
+  case 'Fire':
+    el_span = `<span style = 'color: red; font-weight: bold'>${npc.element}</span>`;
+    break;
+  case 'Air':
+    el_span = `<span style = 'color: lightblue; font-weight: bold'>${npc.element}</span>`;
+    break;
+  }
+
   //random generate number from 1 to 4
   let random_action = Math.floor((Math.random() * 4) + 1);
 
@@ -322,7 +341,7 @@ let npc_turn = function () {
     damage_dealt *= language_check();
     damage_dealt = Math.floor(damage_dealt);
 
-    npc_message.innerHTML = `${npc.name} used a ${npc.language} attack to deal ${damage_dealt} damage. ${effective}`;
+    npc_message.innerHTML = `${npc.name} used a ${npc.language} attack to deal <strong>${damage_dealt} damage</strong>. ${effective}`;
     player_character.health -= damage_dealt;
     round += 1;
     break;
@@ -331,19 +350,19 @@ let npc_turn = function () {
     damage_dealt *= npc_element_check();
     damage_dealt = Math.floor(damage_dealt);
 
-    npc_message.innerHTML = `${npc.name} used a ${npc.element} attack to deal ${damage_dealt} damage. ${effective}`;
+    npc_message.innerHTML = `${npc.name} used a ${el_span} attack to deal <strong>${damage_dealt} damage</strong>. ${effective}`;
     player_character.health -= damage_dealt;
     round += 1;
     break;
 
   case 3:
-    npc_message.innerHTML = `${npc.name} used a normal attack to deal ${damage_dealt} damage.`;
+    npc_message.innerHTML = `${npc.name} used a normal attack to deal <strong>${damage_dealt} damage</strong>.`;
     player_character.health -= damage_dealt;
     round += 1;
     break;
 
   case 4:
-    npc_message.innerHTML = `${npc.name} is defending.`;
+    npc_message.innerHTML = `${npc.name} is <strong>defending</strong>.`;
     npc_message.defending = true;
     round += 1;
     break;
@@ -355,6 +374,10 @@ let npc_turn = function () {
   //check if battle is over
   battle_resolution();
   round_display.innerHTML = round;
+  if (battle_resolution()) {
+    let game_over = document.querySelector('#round-container h2');
+    game_over.innerHTML = 'Game over';
+  }
 };
 
 // --------BATTLE LOGIC IMPLEMENTED HERE----------------------------
@@ -363,6 +386,22 @@ let buttonHandler = function (event) {
   effective = '';
   //base damge calculator
   let damage_dealt = Math.floor(((Math.random() * 20) + 10) * defend_check());
+  // set up message color for element
+  let el_span = '';
+  switch (player_character.element) {
+  case 'Earth':
+    el_span = `<span style = 'color: brown; font-weight: bold'>${player_character.element}</span>`;
+    break;
+  case 'Water':
+    el_span = `<span style = 'color: blue; font-weight: bold'>${player_character.element}</span>`;
+    break;
+  case 'Fire':
+    el_span = `<span style = 'color: red; font-weight: bold'>${player_character.element}</span>`;
+    break;
+  case 'Air':
+    el_span = `<span style = 'color: lightblue; font-weight: bold'>${player_character.element}</span>`;
+    break;
+  }
 
   // switch to decide behavior based on button pressed
   switch (event.target.id) {
@@ -370,7 +409,9 @@ let buttonHandler = function (event) {
   case 'language':
     damage_dealt *= language_check();
     damage_dealt = Math.floor(damage_dealt);
-    player_message.innerHTML = `${player_character.name} used a ${player_character.language} attack to deal ${damage_dealt} damage. ${effective}`;
+
+    player_message.innerHTML = `${player_character.name} used a ${player_character.language} attack to deal <strong>${damage_dealt} damage</strong>. ${effective}`;
+
     npc.health -= damage_dealt;
 
 
@@ -400,18 +441,17 @@ let buttonHandler = function (event) {
   case 'element':
     damage_dealt *= player_element_check();
     damage_dealt = Math.floor(damage_dealt);
-
-    player_message.innerHTML = `${player_character.name} used a ${player_character.element} attack to deal ${damage_dealt} damage. ${effective}`;
+    player_message.innerHTML = `${player_character.name} used a ${el_span} attack to deal <strong>${damage_dealt} damage</strong>. ${effective}`;
     npc.health -= damage_dealt;
     break;
 
   case 'normal':
-    player_message.innerHTML = `${player_character.name} used a normal attack to deal ${damage_dealt} damage.`;
+    player_message.innerHTML = `${player_character.name} used a normal attack to deal <strong>${damage_dealt}</strong> damage.`;
     npc.health -= damage_dealt;
     break;
 
   case 'defend':
-    player_message.innerHTML = `${player_character.name} is defending,`;
+    player_message.innerHTML = `${player_character.name} is <strong>defending</strong>.`;
     break;
   }
 
