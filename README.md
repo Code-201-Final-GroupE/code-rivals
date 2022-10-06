@@ -1,19 +1,22 @@
 # Code Rivals
 ### by Table 11 Productions
 
-A game incorporating facts about code fellows members inspired by pokemon battle interface. Create a character by answering questions, which can then be “battled” through a pokemon battle type interface with boosts provided to the player character by taking quiz questions about our team.
+A browser playable game that incorporates important programmers throughout history inspired by the pokemon battle interface. Create a character by filling out a form that determines the affinities of your fighter, which gives you bonuses against opponents that match your preferred programming language, along with a rock-paper-scissors style elemental affinity system.
 
 ## Important Links
+
+- [Live site](https://code-201-final-groupe.github.io/code-rivals/)
 - [Game Repo](https://github.com/Code-201-Final-GroupE/code-rivals)
 - [Deployed Readme](https://code-201-final-groupe.github.io/code-rivals/)
+
 ## Team Members
 
-- Casey Glidewell
+- Casey Glidewell (She/They)
 - Chris Johnston (He/Him)
 - Dennis Nichols  
-- Isaiah Mitchell   
+- Isaiah Mitchell
 
-## Image attributions:
+## Image attributions
 
 https://upload.wikimedia.org/wikipedia/commons/3/3a/Alan_Turing_Age_16_Colorized.jpg
 
