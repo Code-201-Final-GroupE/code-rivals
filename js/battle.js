@@ -29,6 +29,7 @@ let player_hp_display = document.getElementById('player-hp-bar');
 let npc_hp_display = document.getElementById('npc-hp-bar');
 let player_name_display = document.getElementById('player-name');
 let npc_name_display = document.getElementById('npc-name');
+let langRef = document.getElementById('lang-sprite');
 
 let effective = ''; // extra or less effective message
 
@@ -45,7 +46,7 @@ window.onload = (event) => {
   npc = npc_array[npc_index];
 
   let imgRef = document.getElementById('npc-sprite');
-
+  let langRef = document.getElementById('lang-sprite');
 
   if (npc.name === 'Alan Turing'){
     console.log('alan!');
@@ -71,6 +72,19 @@ window.onload = (event) => {
     console.log('Brendan!');
     imgRef.src = 'img/Brendan.jpg';
 
+  }
+
+  if (player_character.language ==='JavaScript'){
+    langRef.src = 'img/java.png';
+  }
+  else if (player_character.language ==='CSS'){
+    langRef.src = 'img/css.png';
+  }
+  else if (player_character.language ==='Ruby'){
+    langRef.src = 'img/ruby.png';
+  }
+  else if (player_character.language ==='Python'){
+    langRef.src = 'img/python.png';
   }
 
   player_name_display.innerHTML = player_character.name;
@@ -356,9 +370,31 @@ let buttonHandler = function (event) {
   case 'language':
     damage_dealt *= language_check();
     damage_dealt = Math.floor(damage_dealt);
-
     player_message.innerHTML = `${player_character.name} used a ${player_character.language} attack to deal ${damage_dealt} damage. ${effective}`;
     npc.health -= damage_dealt;
+
+
+    langRef.style.opacity = 1;
+
+    setTimeout(() => {
+      langRef.style.opacity = .75;
+      setTimeout(() => {
+        langRef.style.opacity = .5;
+        setTimeout(() => {
+          langRef.style.opacity = .25;
+          setTimeout(() => {
+            langRef.style.opacity = 0;
+          }, '100');
+
+        }, '100');
+
+      }, '100');
+
+    }, '300');
+
+
+
+
     break;
 
   case 'element':
