@@ -34,6 +34,7 @@ body {
 /* Grid layout definitions for the nav bar */
 #about-button {
   grid-area: right;
+  width: 14rem;
 }
 
 #code_rivals_logo {
@@ -44,6 +45,7 @@ body {
 
 #landing-button {
   grid-area: left;
+  width: 14rem;
 }
 
 /* Nav bar styling */
@@ -61,11 +63,11 @@ nav {
   border-right: hidden;
 }
 
-nav img {
+/* nav img {
   margin: auto;
   height: 100px;
   width: auto;
-}
+} */
 
 nav button {
   background-color: #86ddd7;

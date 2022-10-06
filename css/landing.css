@@ -48,6 +48,15 @@ nav button {
   width: 90%;
 }
 
+#about-button {
+  grid-area: right;
+  width: 14rem;
+}
+#battle-button {
+  grid-area: left;
+  width: 14rem;
+}
+
 
 form {
   display: flex;
