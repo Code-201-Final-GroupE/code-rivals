@@ -254,7 +254,7 @@ let battle_resolution = function () {
 // -----------HP UPDATE----------------------------------
 
 let player_hp_update = function () {
-  let hp_width = Math.floor((player_character.health /100) * 120) + 'px';
+  let hp_width = Math.floor((player_character.health /100) * 170) + 'px';
   //set width of hp bar
   if (player_character.health <= 0) {
     player_hp_display.style.width = '0px';
@@ -273,7 +273,7 @@ let player_hp_update = function () {
 };
 
 let npc_hp_update = function () {
-  let hp_width = Math.floor((npc.health / 100) * 120) + 'px';
+  let hp_width = Math.floor((npc.health / 100) * 170) + 'px';
   //set width of hp bar
   if (npc.health <= 0) {
     npc_hp_display.style.width = '0px';
