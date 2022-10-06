@@ -44,6 +44,35 @@ window.onload = (event) => {
   let npc_index = Math.floor(Math.random() * npc_array.length);
   npc = npc_array[npc_index];
 
+  let imgRef = document.getElementById('npc-sprite');
+
+
+  if (npc.name === 'Alan Turing'){
+    console.log('alan!');
+    imgRef.src = 'img/Alan.jpg';
+  }
+
+  else if (npc.name === 'Ada Lovelace'){
+    console.log('Ada!');
+    imgRef.src = 'img/Ada.png';
+  }
+
+  else if (npc.name === 'Admiral Grace Hopper'){
+    console.log('Grace!');
+    imgRef.src = 'img/Grace.jpg';
+  }
+
+  else if (npc.name === 'Guido Van Rossum'){
+    console.log('Van Rossum!');
+    imgRef.src = 'img/Guido.jpg';
+  }
+
+  else if (npc.name === 'Brendan Eich'){
+    console.log('Brendan!');
+    imgRef.src = 'img/Brendan.jpg';
+
+  }
+
   player_name_display.innerHTML = player_character.name;
   npc_name_display.innerHTML = npc.name;
 
@@ -66,6 +95,9 @@ window.onload = (event) => {
 
   defend_button.innerHTML = 'Defend';
   defend_button.setAttribute('id', 'defend');
+
+
+
 };
 
 
